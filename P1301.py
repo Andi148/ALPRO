@@ -85,6 +85,8 @@ def developer_4(st):
             print(f'Masukkan jumlah stok yang ingin ditambah ke {barang["Nama"]}')
             jls = int(input())
             barang["Stok"] += jls
+        else:
+            print('Maaf ID barang yang anda masukan tidak valid')
 
         
 # Program Utama
