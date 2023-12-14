@@ -19,8 +19,7 @@ data_barang = [
     {"ID": "Q24", "Nama": "Penghapus", "Spesifikasi": "joyko-345", "Stok": 20, "Satuan": "Buah",     "Harga": 4500},
     {"ID": "Q12", "Nama": "Penghapus", "Spesifikasi": "ATM-60", "Stok": 10, "Satuan": "Buah", "Harga": 1500},
     {"ID": "K12", "Nama": "Folio", "Spesifikasi": "Sidu F4", "Stok": 30,"Satuan": "Rim", "Harga": 45000},
-    {"ID": "K15", "Nama": "A4", "Spesifikasi": "Sidu A4", "Stok": 15, "Satuan": "Rim","Harga": 65000},
-    {"ID": "P19", "Nama": "Penggaris Logam", "Spesifikasi": "Joyko-212", "Stok": 30, "Satuan": "Set","Harga": 23000},
+    {"ID": "K15", "Nama": "A4", "Spesifikasi": "Sidu A4", "Stok": 15, "Satuan": "Rim","Harga": 65000}
     # Tambahkan data lainnya sesuai kebutuhan
 ]
 nama_pss = [
