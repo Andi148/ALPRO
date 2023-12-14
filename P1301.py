@@ -70,9 +70,21 @@ def developer_2():
         developer(id)
         
 def developer_3():
-    nn = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang)')
-    if nn == "2":
+    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang)')
+    if dv == "2":
         developer(id)
+    elif dv == "1":
+        global st
+        st = input("Masukkan ID barang yang ingin di Re-stok:   ")
+        developer_4(st)
+
+# fungsi re stok
+def developer_4(st):
+    for barang in data_barang:
+        if barang["ID"] == st:
+            print(f'Masukkan jumlah stok yang ingin ditambah ke {barang["Nama"]}')
+            jls = int(input())
+            barang["Stok"] += jls
 
         
 # Program Utama
