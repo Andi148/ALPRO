@@ -60,6 +60,7 @@ def developer(id):
         
         # Menambahkan barang baru ke data_barang
             data_barang.append(barang_baru)
+            print('Produk baru sudah di tambahkan')
             developer_2()
         else:
             print('Maaf Nama atau Password salah')
@@ -82,11 +83,12 @@ def developer_3():
 def developer_4(st):
     for barang in data_barang:
         if barang["ID"] == st:
-            print(f'Masukkan jumlah stok yang ingin ditambah ke {barang["Nama"]}')
+            print(f'Masukkan jumlah stok yang ingin ditambah ke {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
             jls = int(input())
             barang["Stok"] += jls
-        else:
-            print('Maaf ID barang yang anda masukan tidak valid')
+            print(f'Stok {barang["Nama"]} telah ditambahkan sebesar', jls, f'jumlah total stok {barang["Nama"]} menjadi {barang["Stok"]}')
+            return
+    print('Maaf ID barang yang anda masukan tidak valid')
 
         
 # Program Utama
