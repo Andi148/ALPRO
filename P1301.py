@@ -109,6 +109,7 @@ def developer_2():
     # Menambahkan barang baru ke data_barang
     data_barang.append(barang_baru)
     print('Produk baru sudah di tambahkan')
+    start()
 
 # fungsi re stok
 def developer_4(st):
@@ -118,6 +119,7 @@ def developer_4(st):
             jls = int(input())
             barang["Stok"] += jls
             print(f'Stok {barang["Nama"]} telah ditambahkan sebesar', jls, f'jumlah total stok {barang["Nama"]} menjadi {barang["Stok"]}')
+            developer_5()
             return
     print('Maaf ID barang yang anda masukan tidak valid')
             
@@ -125,8 +127,10 @@ def developer_4(st):
     
 def developer_5():
     dv = input('Apakah Ada Barang lain?  (1. YA)  (2. Tidak)')
-    if dv == "4":
-        developer_4(st)
+    if dv == "1":
+        developer_3()
+    else:
+        start()
         
 # Memanggil fungsi start untuk memulai
 start()
