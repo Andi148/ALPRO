@@ -1,4 +1,8 @@
-
+# TUGAS PRAKTIKUM PERTEMUAN KE-13
+# ALGORITMA PEMROGRAMAN I, GANJIL 2023/2024
+# NPM : 2313020180
+# Nama : Andi Kusuma Wardana
+# Kelas : 1-D
 
 # Data barang
 data_barang = [
