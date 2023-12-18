@@ -1,8 +1,7 @@
-# TUGAS PRAKTIKUM PERTEMUAN KE-13
-# ALGORITMA PEMROGRAMAN I, GANJIL 2023/2024
-# NPM : 2313020180
-# Nama : Andi Kusuma Wardana
-# Kelas : 1-D
+# PROJECT 3 MINGGU
+# Nama Kelompok : Aqilla Ziidane Akbar   (2313020168)
+#                 Andi Kusuma Wardana    (2313020180)
+#                 Seftivan Ekacandra A.  (2313020170)
 
 # Data barang
 data_barang = [
@@ -25,6 +24,7 @@ data_barang = [
     # Tambahkan data lainnya sesuai kebutuhan
 ]
 
+
 # nama_pss = [
 #     {"Nama": "Andi", "pss":"sononamidawo123"}
 # ]
@@ -32,14 +32,14 @@ data_barang = [
 
 total_pembelian = 0
 
-# Menampilakan Tabel barang
+    # Menampilakan Tabel barang
 
 def tampilkan_data():
     print("{:<8} {:<15} {:<37} {:<13} {:<13} {:<8}".format("ID","Merek", "Tipe", "Stok", "Satuan", "Harga"))
     for barang in data_barang:
         print("{:<8} {:<15} {:<37} {:<13} {:<13} {:<8}".format(barang["ID"], barang["Nama"], barang["Spesifikasi"], barang["Stok"], barang["Satuan"], barang["Harga"]))
         
-        # Fungsi untuk membeli barang dan mencetak total pembelian
+    # Fungsi untuk membeli barang dan mencetak total pembelian
 def beli_barang(id):
     global total_pembelian
     for barang in data_barang:
@@ -50,7 +50,7 @@ def beli_barang(id):
             return
     print(f'Anda tidak dapat membeli {barang["Nama"]}, Spesifikasi {barang["Spesifikasi"]} dengan stok diminta',jlbarang, f'dikarenakan stok yang tersedia {barang["Stok"]}')
         
-# fungsi start bertugas untuk meminta input dari pengguna apakah mereka adalah developer atau pembeli.
+    # fungsi start bertugas untuk meminta input dari pengguna apakah mereka adalah developer atau pembeli.
 def start():
     print('Selamat Datang di Toko Elektronik Teyvat')
     user_type = input("Masukkan pilihan Anda (1. Developer) (2. Pembeli):  ")
@@ -70,7 +70,8 @@ def developer():
     # Contoh data pengguna
     nama_pss = [
         {"Nama": "zidan", "pss": "123"},
-        {"Nama": "andi", "pss": "sononamidawo123"}
+        {"Nama": "andi", "pss": "123"},
+        {"Nama": "seftivan", "pss": "123"}
     # Tambahkan data pengguna lainnya sesuai kebutuhan
 ]
     id = input("Masukkan Nama: ")
@@ -114,7 +115,7 @@ def developer_2():
     data_barang.append(barang_baru)
     print('Produk baru sudah di tambahkan')
     developer_3()
-
+    
 # fungsi re stok
 def developer_4(st):
     for barang in data_barang:
@@ -126,8 +127,12 @@ def developer_4(st):
             developer_5()
             return
     print('Maaf ID barang yang anda masukan tidak valid')
-    developer_3()
-            
+    st = input("Masukkan ID barang yang valid atau 'exit' untuk keluar: ")
+    if st.lower() == 'exit':
+        developer_3()
+    else:
+        developer_4(st)
+
 def developer_5():
     dv = input('Apakah Ada Barang lain?  (1. YA)  (2. Tidak)')
     if dv == "1":
@@ -138,9 +143,24 @@ def developer_5():
     else:
         print('Pilihan tidak valid')
         developer_5()
+
+start()
+
+# fungsi re stok
+# def developer_4(st):
+#     for barang in data_barang:
+#         if barang["ID"] == st:
+#             print(f'Masukkan jumlah stok yang ingin ditambah ke {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
+#             jls = int(input())
+#             barang["Stok"] += jls
+#             print(f'Stok {barang["Nama"]} telah ditambahkan sebesar', jls, f'jumlah total stok {barang["Nama"]} menjadi {barang["Stok"]}')
+#             developer_5()
+#             return
+#     print('Maaf ID barang yang anda masukan tidak valid')
+#     developer_4(st)
+            
         
 # Memanggil fungsi start untuk memulai
-start()
 
 # def developer(id):
 #     for nm in nama_pss:
@@ -183,6 +203,7 @@ start()
 #             return
 #     print('Maaf ID barang yang anda masukan tidak valid')
 
+
 # Program Utama
 kondisi = True
 while kondisi != False:
@@ -205,11 +226,13 @@ while kondisi != False:
     elif pilihan == '3':
         print(f'Total pembelian Anda saat ini adalah {total_pembelian}')
         
+        
     # elif pilihan == '4':
     #     print('Anda akan memasuki mode developer, pastikan username dan passwordnya benar!')
     #     id = input('Masukkan Username  :')
     #     pss = input('Masukkan Password  :')
     #     developer_3()
+    
     
     elif pilihan == '4':
         print("Terima Kasih Telah Menggunakan Program Kami!")
