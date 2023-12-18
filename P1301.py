@@ -46,15 +46,14 @@ def beli_barang(id):
         if barang['ID'] == id and barang['Stok'] > 0 and jlbarang <= barang["Stok"]:
             barang["Stok"] -= jlbarang
             total_pembelian += jlbarang*barang["Harga"]
-            print(f'Anda telah membeli {barang["Nama"]} dengan harga {barang["Harga"]*jlbarang}')
+            print(f'Anda telah membeli {barang["Nama"]}, Spesifikasi {barang["Spesifikasi"]} dengan harga {barang["Harga"]*jlbarang}')
             return
-    print("Barang tidak tersedia")
-    developer(id)
-
+    print(f'Anda tidak dapat membeli {barang["Nama"]}, Spesifikasi {barang["Spesifikasi"]} dengan stok diminta',jlbarang, f'dikarenakan stok yang tersedia {barang["Stok"]}')
         
 # fungsi start bertugas untuk meminta input dari pengguna apakah mereka adalah developer atau pembeli.
 def start():
-    user_type = input("Anda developer atau pembeli? (1. Developer) (2. Pembeli)")
+    print('Selamat Datang di Toko Elektronik Teyvat')
+    user_type = input("Masukkan pilihan Anda (1. Developer) (2. Pembeli):  ")
     if user_type == "1":
         developer()
     elif user_type == "2":
@@ -86,7 +85,7 @@ def developer():
         developer()
 
 def developer_3():
-    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Check Data)')
+    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Check Data) (4. Kembali ke menu utama)')
     if dv == "2":
         developer_2()
     elif dv == "1":
@@ -94,6 +93,11 @@ def developer_3():
         developer_4(st)
     elif dv == "3":
         tampilkan_data()
+        developer_3()
+    elif dv == "4":
+        start()
+    else:
+        print('Pilihan tidak valid')
         developer_3()
 
 def developer_2():
@@ -109,7 +113,7 @@ def developer_2():
     # Menambahkan barang baru ke data_barang
     data_barang.append(barang_baru)
     print('Produk baru sudah di tambahkan')
-    start()
+    developer_3()
 
 # fungsi re stok
 def developer_4(st):
@@ -122,15 +126,18 @@ def developer_4(st):
             developer_5()
             return
     print('Maaf ID barang yang anda masukan tidak valid')
+    developer_3()
             
-            # THISSS PROBLLEEMMM
-    
 def developer_5():
     dv = input('Apakah Ada Barang lain?  (1. YA)  (2. Tidak)')
     if dv == "1":
         developer_3()
+    elif dv == "2":
+        tampilkan_data()
+        developer_3()
     else:
-        start()
+        print('Pilihan tidak valid')
+        developer_5()
         
 # Memanggil fungsi start untuk memulai
 start()
@@ -183,7 +190,8 @@ while kondisi != False:
     print('2. Beli Barang')
     print('3. Lihat Total Pembelian')
     print('4. Keluar')
-    print("Masukkan nomor perintah!")
+    print('5. Kembali ke menu utama')
+    print("Masukkan nomor perintah! (1 - 5)")
     pilihan = input()
     
     if pilihan == '1':
@@ -206,6 +214,8 @@ while kondisi != False:
     elif pilihan == '4':
         print("Terima Kasih Telah Menggunakan Program Kami!")
         kondisi = False
+    elif pilihan == '5':
+        start()
     else:
         print("Pilihan tidak valid")
         
