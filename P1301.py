@@ -6,35 +6,40 @@
 
 # Data barang
 data_barang = [
-    {"ID": "B07", "Nama": "Ballpoint", "Spesifikasi": "faster C600", "Stok": 19,"Satuan": "Lusin", "Harga": 28600},
-    {"ID": "B21", "Nama": "Ballpoint", "Spesifikasi": "pilot BPTP", "Stok": 15,"Satuan": "Lusin", "Harga": 24700},
-    {"ID": "B44", "Nama": "Ballpoint", "Spesifikasi": "snowman V2", "Stok": 17,"Satuan": "Lusin", "Harga": 24100},
-    {"ID": "L04", "Nama": "Lakban", "Spesifikasi": "panfix 1/2x72", "Stok": 30, "Satuan": "Roll", "Harga": 13200},
-    {"ID": "L17", "Nama": "Lakban", "Spesifikasi": "nachi 1/2x72", "Stok": 36, "Satuan": "Roll", "Harga": 5400},
-    {"ID": "C09", "Nama": "Cutter", "Spesifikasi": "joyko A-300A", "Stok": 24, "Satuan": "Buah","Harga": 7900},
-    {"ID": "C31", "Nama": "Cutter", "Spesifikasi": "SDI 0405", "Stok": 20, "Satuan": "Buah","Harga": 11500},
-    {"ID": "C35", "Nama": "Cutter", "Spesifikasi": "SDI 0416", "Stok": 30, "Satuan": "Buah","Harga": 18900},
-    {"ID": "P15", "Nama": "Penggaris Plastik", "Spesifikasi": "Joy-art RLS-A3", "Stok": 12, "Satuan": "Set","Harga": 15200},
-    {"ID": "P37", "Nama": "Penggaris Plastik", "Spesifikasi": "Joy-art RLS-S-T4", "Stok": 18, "Satuan": "Set","Harga": 13200},
-    {"ID": "Q24", "Nama": "Penghapus", "Spesifikasi": "joyko-345", "Stok": 20, "Satuan": "Buah",     "Harga": 4500},
-    {"ID": "Q12", "Nama": "Penghapus", "Spesifikasi": "ATM-60", "Stok": 10, "Satuan": "Buah", "Harga": 1500},
-    {"ID": "K12", "Nama": "Folio", "Spesifikasi": "Sidu F4", "Stok": 30,"Satuan": "Rim", "Harga": 45000},
-    {"ID": "K15", "Nama": "A4", "Spesifikasi": "Sidu A4", "Stok": 15, "Satuan": "Rim","Harga": 65000}
+    {"ID": "E01", "Nama": "Laptop", "Spesifikasi": "Lenovo ThinkPad X1", "Stok": 10, "Satuan": "Unit", "Harga": 15000000},
+    {"ID": "E02", "Nama": "Handphone", "Spesifikasi": "Samsung Galaxy S21", "Stok": 15, "Satuan": "Unit", "Harga": 10000000},
+    {"ID": "E03", "Nama": "Kamera", "Spesifikasi": "Canon EOS 5D Mark IV", "Stok": 7, "Satuan": "Unit", "Harga": 50000000},
+    {"ID": "E04", "Nama": "Printer", "Spesifikasi": "Epson L3150", "Stok": 20, "Satuan": "Unit", "Harga": 3000000},
+    {"ID": "E05", "Nama": "Televisi", "Spesifikasi": "LG OLED55C1PUB", "Stok": 5, "Satuan": "Unit", "Harga": 15000000},
+    {"ID": "E06", "Nama": "Speaker", "Spesifikasi": "JBL Flip 5", "Stok": 25, "Satuan": "Unit", "Harga": 2000000},
+    {"ID": "E07", "Nama": "Mouse", "Spesifikasi": "Logitech MX Master 3", "Stok": 30, "Satuan": "Unit", "Harga": 1500000},
+    {"ID": "E08", "Nama": "Keyboard", "Spesifikasi": "Razer BlackWidow V3 Pro", "Stok": 20, "Satuan": "Unit", "Harga": 3000000},
+    {"ID": "E09", "Nama": "Charger", "Spesifikasi": "Anker PowerPort III Nano", "Stok": 50, "Satuan": "Unit", "Harga": 300000},
+    {"ID": "E10", "Nama": "Headset", "Spesifikasi": "Sony WH-1000XM4", "Stok": 15, "Satuan": "Unit", "Harga": 4000000},
+    {"ID": "E11", "Nama": "Webcam", "Spesifikasi": "Logitech C922 Pro", "Stok": 10, "Satuan": "Unit", "Harga": 1500000},
+    {"ID": "E12", "Nama": "Flashdisk", "Spesifikasi": "Sandisk Ultra Flair 64GB", "Stok": 40, "Satuan": "Unit", "Harga": 200000},
+    {"ID": "E13", "Nama": "SSD", "Spesifikasi": "Kingston A2000 NVMe PCIe M.2 1TB", "Stok": 15, "Satuan": "Unit", "Harga": 2000000},
+    {"ID": "E14", "Nama": "HDD", "Spesifikasi": "Seagate BarraCuda 2TB", "Stok": 10, "Satuan": "Unit", "Harga": 1000000},
+    {"ID": "E15", "Nama": "RAM", "Spesifikasi": "Corsair Vengeance LPX 16GB DDR4", "Stok": 20, "Satuan": "Unit", "Harga": 1000000}
+    
     # Tambahkan data lainnya sesuai kebutuhan
 ]
-nama_pss = [
-    {"Nama": "Andi", "pss":"sononamidawo123"}
-]
+
+# nama_pss = [
+#     {"Nama": "Andi", "pss":"sononamidawo123"}
+# ]
 
 
 total_pembelian = 0
+
 # Menampilakan Tabel barang
+
 def tampilkan_data():
-    print("{:<8} {:<20} {:<20} {:<10} {:<10} {:<8}".format("ID","Nama Barang", "Spesifikasi", "Stok", "Satuan", "Harga"))
+    print("{:<8} {:<15} {:<37} {:<13} {:<13} {:<8}".format("ID","Merek", "Tipe", "Stok", "Satuan", "Harga"))
     for barang in data_barang:
-        print("{:<8} {:<20} {:<20} {:<10} {:<10} {:<8}".format(barang["ID"], barang["Nama"], barang["Spesifikasi"], barang["Stok"], barang["Satuan"], barang["Harga"]))
+        print("{:<8} {:<15} {:<37} {:<13} {:<13} {:<8}".format(barang["ID"], barang["Nama"], barang["Spesifikasi"], barang["Stok"], barang["Satuan"], barang["Harga"]))
         
-# Fungsi untuk membeli barang dan mencetak total pembelian
+        # Fungsi untuk membeli barang dan mencetak total pembelian
 def beli_barang(id):
     global total_pembelian
     for barang in data_barang:
@@ -44,40 +49,66 @@ def beli_barang(id):
             print(f'Anda telah membeli {barang["Nama"]} dengan harga {barang["Harga"]*jlbarang}')
             return
     print("Barang tidak tersedia")
+    developer(id)
 
-def developer(id):
+        
+# fungsi start bertugas untuk meminta input dari pengguna apakah mereka adalah developer atau pembeli.
+def start():
+    user_type = input("Anda developer atau pembeli? (1. Developer) (2. Pembeli)")
+    if user_type == "1":
+        developer()
+    elif user_type == "2":
+        pembeli()
+    else:
+        print("Maaf, pilihan tidak valid. Silakan masukkan 1 untuk Developer atau 2 untuk Pembeli.")
+        start()
+
+def pembeli():
+    # Tambahkan fungsi untuk pembeli di sini
+    pass
+
+def developer():
+    # Contoh data pengguna
+    nama_pss = [
+        {"Nama": "zidan", "pss": "123"},
+        {"Nama": "andi", "pss": "sononamidawo123"}
+    # Tambahkan data pengguna lainnya sesuai kebutuhan
+]
+    id = input("Masukkan Nama: ")
+    pss = input("Masukkan Password: ")
     for nm in nama_pss:
-        if  nm['Nama'] == id and nm['pss'] == pss:
-        # Membuat dictionary untuk barang baru
-            print('Isi hal yang dibutuhkan')
-            barang_baru = {}
-            barang_baru["ID"] = input("Masukkan ID barang: ")
-            barang_baru["Nama"] = input("Masukkan Nama: ")
-            barang_baru["Spesifikasi"] = input("Masukkan Spesifikasi barang: ")
-            barang_baru["Stok"] = int(input("Masukkan Stok barang: "))
-            barang_baru["Satuan"] = input("Masukkan Satuan barang: ")
-            barang_baru["Harga"] = int(input("Masukkan Harga barang: "))
-        
-        # Menambahkan barang baru ke data_barang
-            data_barang.append(barang_baru)
-            print('Produk baru sudah di tambahkan')
-            developer_2()
-        else:
-            print('Maaf Nama atau Password salah')
+        if nm['Nama'] == id and nm['pss'] == pss:
+            print('Login berhasil')
+            developer_3()
+            break
+    else:
+        print('Maaf Nama atau Password salah')
+        developer()
 
-def developer_2():
-    kn = input('Apakah Ada Barang lain?  (1. YA)  (2. Tidak)')
-    if kn == "1":
-        developer(id)
-        
 def developer_3():
-    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang)')
+    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Check Data)')
     if dv == "2":
-        developer(id)
+        developer_2()
     elif dv == "1":
-        global st
         st = input("Masukkan ID barang yang ingin di Re-stok:   ")
         developer_4(st)
+    elif dv == "3":
+        tampilkan_data()
+        developer_3()
+
+def developer_2():
+    print('Isi hal yang dibutuhkan')
+    barang_baru = {}
+    barang_baru["ID"] = input("Masukkan ID barang: ")
+    barang_baru["Nama"] = input("Masukkan Nama: ")
+    barang_baru["Spesifikasi"] = input("Masukkan Spesifikasi barang: ")
+    barang_baru["Stok"] = int(input("Masukkan Stok barang: "))
+    barang_baru["Satuan"] = input("Masukkan Satuan barang: ")
+    barang_baru["Harga"] = int(input("Masukkan Harga barang: "))
+    
+    # Menambahkan barang baru ke data_barang
+    data_barang.append(barang_baru)
+    print('Produk baru sudah di tambahkan')
 
 # fungsi re stok
 def developer_4(st):
@@ -89,16 +120,65 @@ def developer_4(st):
             print(f'Stok {barang["Nama"]} telah ditambahkan sebesar', jls, f'jumlah total stok {barang["Nama"]} menjadi {barang["Stok"]}')
             return
     print('Maaf ID barang yang anda masukan tidak valid')
-
+            
+            # THISSS PROBLLEEMMM
+    
+def developer_5():
+    dv = input('Apakah Ada Barang lain?  (1. YA)  (2. Tidak)')
+    if dv == "4":
+        developer_4(st)
         
+# Memanggil fungsi start untuk memulai
+start()
+
+# def developer(id):
+#     for nm in nama_pss:
+#         if  nm['Nama'] == id and nm['pss'] == pss:
+#         # Membuat dictionary untuk barang baru
+#             print('Isi hal yang dibutuhkan')
+#             barang_baru = {}
+#             barang_baru["ID"] = input("Masukkan ID barang: ")
+#             barang_baru["Nama"] = input("Masukkan Nama: ")
+#             barang_baru["Spesifikasi"] = input("Masukkan Spesifikasi barang: ")
+#             barang_baru["Stok"] = int(input("Masukkan Stok barang: "))
+#             barang_baru["Satuan"] = input("Masukkan Satuan barang: ")
+#             barang_baru["Harga"] = int(input("Masukkan Harga barang: "))
+        
+#         # Menambahkan barang baru ke data_barang
+#             data_barang.append(barang_baru)
+#             print('Produk baru sudah di tambahkan')
+#             developer_2()
+#         else:
+#             print('Maaf Nama atau Password salah')
+        
+# def developer_3():
+#     dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang)')
+#     if dv == "2":
+#         developer(id)
+#     elif dv == "1":
+#         global st
+#         st = input("Masukkan ID barang yang ingin di Re-stok:   ")
+#         developer_4(st)
+#         developer(id)
+
+# fungsi re stok
+# def developer_4(st):
+#     for barang in data_barang:
+#         if barang["ID"] == st:
+#             print(f'Masukkan jumlah stok yang ingin ditambah ke {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
+#             jls = int(input())
+#             barang["Stok"] += jls
+#             print(f'Stok {barang["Nama"]} telah ditambahkan sebesar', jls, f'jumlah total stok {barang["Nama"]} menjadi {barang["Stok"]}')
+#             return
+#     print('Maaf ID barang yang anda masukan tidak valid')
+
 # Program Utama
 kondisi = True
 while kondisi != False:
     print('1. Tampilkan Data')
     print('2. Beli Barang')
     print('3. Lihat Total Pembelian')
-    print('4. Tambahkan produk')
-    print('5. Keluar')
+    print('4. Keluar')
     print("Masukkan nomor perintah!")
     pilihan = input()
     
@@ -113,12 +193,13 @@ while kondisi != False:
     elif pilihan == '3':
         print(f'Total pembelian Anda saat ini adalah {total_pembelian}')
         
+    # elif pilihan == '4':
+    #     print('Anda akan memasuki mode developer, pastikan username dan passwordnya benar!')
+    #     id = input('Masukkan Username  :')
+    #     pss = input('Masukkan Password  :')
+    #     developer_3()
+    
     elif pilihan == '4':
-        print('Anda akan memasuki mode developer, pastikan username dan passwordnya benar!')
-        id = input('Masukkan Username  :')
-        pss = input('Masukkan Password  :')
-        developer_3()
-    elif pilihan == '5':
         print("Terima Kasih Telah Menggunakan Program Kami!")
         kondisi = False
     else:
