@@ -31,7 +31,7 @@ data_barang = [
 
 
 total_pembelian = 0
-
+jlbarang = 0
     # Menampilakan Tabel barang
 
 def tampilkan_data():
@@ -41,14 +41,29 @@ def tampilkan_data():
         
     # Fungsi untuk membeli barang dan mencetak total pembelian
 def beli_barang(id):
+    id_valid = False
+    for barang in data_barang:
+        if barang['ID'] == id:
+            beli_barang2(id)
+            id_valid = True
+    if not id_valid:
+        print('ID barang salah, silahkan masukkan ID barang yang sesuai dengan Tabel barang dibawah')
+        tampilkan_data()
+    
+
+def beli_barang2(id):
     global total_pembelian
     for barang in data_barang:
-        if barang['ID'] == id and barang['Stok'] > 0 and jlbarang <= barang["Stok"]:
-            barang["Stok"] -= jlbarang
-            total_pembelian += jlbarang*barang["Harga"]
-            print(f'Anda telah membeli {barang["Nama"]}, Spesifikasi {barang["Spesifikasi"]} dengan harga {barang["Harga"]*jlbarang}')
-            return
-    print(f'Anda tidak dapat membeli {barang["Nama"]}, Spesifikasi {barang["Spesifikasi"]} dengan stok diminta',jlbarang, f'dikarenakan stok yang tersedia {barang["Stok"]}')
+        if  barang['ID'] == id:
+            jlbarang = int(input("Jumlah barang yang dibeli:  "))
+            if jlbarang <= barang["Stok"] and barang['Stok'] > 0:
+                barang["Stok"] -= jlbarang
+                total_pembelian += jlbarang*barang["Harga"]
+                print(f'Anda telah membeli {barang["Nama"]}, Spesifikasi {barang["Spesifikasi"]} dengan harga {barang["Harga"]*jlbarang}')
+                return
+            else:
+                print(f'Anda tidak dapat membeli {barang["Nama"]}, Spesifikasi {barang["Spesifikasi"]} dengan stok diminta',jlbarang, f'dikarenakan stok yang tersedia {barang["Stok"]}')
+
         
     # fungsi start bertugas untuk meminta input dari pengguna apakah mereka adalah developer atau pembeli.
 def start():
@@ -71,7 +86,7 @@ def developer():
     nama_pss = [
         {"Nama": "zidan", "pss": "123"},
         {"Nama": "andi", "pss": "123"},
-        {"Nama": "seftivan", "pss": "123"}
+        {"Nama": "van", "pss": "asd"}
     # Tambahkan data pengguna lainnya sesuai kebutuhan
 ]
     id = input("Masukkan Nama: ")
@@ -83,7 +98,11 @@ def developer():
             break
     else:
         print('Maaf Nama atau Password salah')
-        developer()
+        id_pss = input('ingin kembali ke menu utama atau coba kembali? (1. Menu utama) (2. Coba lagi):  ')
+        if id_pss == "1":
+            start()
+        elif id_pss == "2":
+            developer()
 
 def developer_3():
     dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Check Data) (4. Kembali ke menu utama)')
@@ -114,7 +133,7 @@ def developer_2():
     # Menambahkan barang baru ke data_barang
     data_barang.append(barang_baru)
     print('Produk baru sudah di tambahkan')
-    developer_3()
+    developer_6()
     
 # fungsi re stok
 def developer_4(st):
@@ -134,16 +153,28 @@ def developer_4(st):
         developer_4(st)
 
 def developer_5():
-    dv = input('Apakah Ada Barang lain?  (1. YA)  (2. Tidak)')
+    dv = input('Apakah ingin melihat stok yang sudah ditambahkan?  (1. YA)  (2. Tidak)')
     if dv == "1":
+        tampilkan_data()
         developer_3()
     elif dv == "2":
-        tampilkan_data()
         developer_3()
     else:
         print('Pilihan tidak valid')
         developer_5()
 
+def developer_6():
+    dv = input('Apakah ingin melihat barang baru yang sudah ditambahkan?  (1. YA)  (2. Tidak)')
+    if dv == "1":
+        tampilkan_data()
+        developer_3()
+    elif dv == "2":
+        developer_3()
+    else:
+        print('Pilihan tidak valid')
+        developer_5()    
+
+#start program
 start()
 
 # fungsi re stok
@@ -220,11 +251,10 @@ while kondisi != False:
         
     elif pilihan == '2':
         id = input("Masukkan ID Barang yang ingin dibeli: ")
-        jlbarang = int(input("Jumlah barang yang dibeli:  "))
         beli_barang(id)
         
     elif pilihan == '3':
-        print(f'Total pembelian Anda saat ini adalah {total_pembelian}')
+        print(f'Total harga yang Anda beli saat ini adalah {total_pembelian}')
         
         
     # elif pilihan == '4':
