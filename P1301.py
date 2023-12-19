@@ -1,7 +1,3 @@
-# PROJECT 3 MINGGU
-# Nama Kelompok Teyvat : Aqilla Ziidane Akbar   (2313020168)
-#                 Andi Kusuma Wardana    (2313020180)
-#                 Seftivan Ekacandra A.  (2313020170)
 
 
 # Data barang
