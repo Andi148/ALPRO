@@ -236,8 +236,8 @@ while kondisi != False:
     print('1. Tampilkan Data')
     print('2. Beli Barang')
     print('3. Lihat Total Pembelian')
-    print('4. Keluar')
-    print('5. Kembali ke menu utama')
+    print('4. Kembali ke menu Utama')
+    print('5. Keluar Program')
     print("Masukkan nomor perintah! (1 - 5)")
     pilihan = input()
     
@@ -251,10 +251,10 @@ while kondisi != False:
     elif pilihan == '3':
         print(f'Total harga yang Anda beli saat ini adalah {total_pembelian}')
         
-    elif pilihan == '4':
+    elif pilihan == '5':
         print("Terima Kasih Telah Menggunakan Program Kami!")
         kondisi = False
-    elif pilihan == '5':
+    elif pilihan == '4':
         start()
     else:
         print("Pilihan tidak valid")
