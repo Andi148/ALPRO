@@ -202,7 +202,7 @@ def developer_7():
     if st.lower() == 'exit':
         developer_3()
     else:
-        developer_6()
+        developer_7()
 
     # Fungsi Hapus Data
 def developer_8():
