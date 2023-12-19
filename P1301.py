@@ -259,4 +259,3 @@ while kondisi != False:
     else:
         print("Pilihan tidak valid")
         
-    #Kode di atas sekarang mencakup total pembelian yang akan diperbarui setiap kali membeli barang. 
