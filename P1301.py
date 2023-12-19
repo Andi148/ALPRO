@@ -104,7 +104,7 @@ def developer():
             developer()
 
 def developer_3():
-    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Edit Data) (4. Hapus Data) (5. Check Data) (6. Kembali ke menu utama)')
+    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Edit Data) (4. Hapus Data) (5. Check Data) (6. Kembali ke menu utama): ')
     if dv == "2":
         developer_2()
     elif dv == "1":
@@ -158,7 +158,7 @@ def developer_4(st):
 
     # Fungsi Popup Alert 
 def developer_5():
-    dv = input('Apakah ingin melihat stok yang sudah ditambahkan?  (1. YA)  (2. Tidak)')
+    dv = input('Apakah ingin melihat data yang sudah diubah  (1. YA)  (2. Tidak) ')
     if dv == "1":
         tampilkan_data()
         developer_3()
@@ -170,7 +170,7 @@ def developer_5():
 
     #  Fungsi Popup Alert
 def developer_6():
-    dv = input('Apakah ingin melihat barang baru yang sudah ditambahkan/diedit?  (1. YA)  (2. Tidak)')
+    dv = input('Apakah ingin melihat barang baru yang sudah ditambahkan?  (1. YA)  (2. Tidak) ')
     if dv == "1":
         tampilkan_data()
         developer_3()
