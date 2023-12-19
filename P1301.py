@@ -1,6 +1,5 @@
 
 
-
 # Data barang
 data_barang = [
     {"ID": "E01", "Nama": "Laptop", "Spesifikasi": "Lenovo ThinkPad X1", "Stok": 10, "Satuan": "Unit", "Harga": 15000000},
