@@ -3,6 +3,7 @@
 #                 Andi Kusuma Wardana    (2313020180)
 #                 Seftivan Ekacandra A.  (2313020170)
 
+
 # Data barang
 data_barang = [
     {"ID": "E01", "Nama": "Laptop", "Spesifikasi": "Lenovo ThinkPad X1", "Stok": 10, "Satuan": "Unit", "Harga": 15000000},
@@ -25,9 +26,7 @@ data_barang = [
 ]
 
 
-# nama_pss = [
-#     {"Nama": "Andi", "pss":"sononamidawo123"}
-# ]
+
 
 
 total_pembelian = 0
@@ -105,17 +104,19 @@ def developer():
             developer()
 
 def developer_3():
-    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Check Data) (4. Kembali ke menu utama)')
+    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Edit Data) (4. Check Data) (5. Kembali ke menu utama)')
     if dv == "2":
         developer_2()
     elif dv == "1":
         st = input("Masukkan ID barang yang ingin di Re-stok:   ")
         developer_4(st)
-    elif dv == "3":
+    elif dv == "4":
         tampilkan_data()
         developer_3()
-    elif dv == "4":
+    elif dv == "5":
         start()
+    elif dv == "3":
+        developer_7()
     else:
         print('Pilihan tidak valid')
         developer_3()
@@ -164,7 +165,7 @@ def developer_5():
         developer_5()
 
 def developer_6():
-    dv = input('Apakah ingin melihat barang baru yang sudah ditambahkan?  (1. YA)  (2. Tidak)')
+    dv = input('Apakah ingin melihat barang baru yang sudah ditambahkan/diedit?  (1. YA)  (2. Tidak)')
     if dv == "1":
         tampilkan_data()
         developer_3()
@@ -174,66 +175,37 @@ def developer_6():
         print('Pilihan tidak valid')
         developer_5()    
 
+def developer_7():
+    st = input("Masukkan ID barang yang ingin diedit atau 'exit' untuk keluar: ")
+    for barang in data_barang:
+        if barang["ID"] == st:
+            print(f'Anda akan mengedit data untuk {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
+            
+            Nama = input('Masukkan merek baru: ')
+            Spesifikasi = input('Masukkan tipe baru: ')
+            Stok = int(input('Masukkan stok baru: '))
+            Satuan = input('Masukkan satuan baru: ')
+            Harga = int(input('Masukkan harga baru: '))
+            
+            barang["Nama"] = Nama
+            barang["Spesifikasi"] = Spesifikasi
+            barang["Stok"] = Stok
+            barang["Satuan"] = Satuan
+            barang["Harga"] = Harga
+            
+            print(f'Data untuk {barang["Nama"]} telah diubah.')
+            developer_5()
+            return
+    print('Maaf ID barang yang anda masukan tidak valid')
+    if st.lower() == 'exit':
+        developer_3()
+    else:
+        developer_6()
+
+
+
 #start program
 start()
-
-# fungsi re stok
-# def developer_4(st):
-#     for barang in data_barang:
-#         if barang["ID"] == st:
-#             print(f'Masukkan jumlah stok yang ingin ditambah ke {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
-#             jls = int(input())
-#             barang["Stok"] += jls
-#             print(f'Stok {barang["Nama"]} telah ditambahkan sebesar', jls, f'jumlah total stok {barang["Nama"]} menjadi {barang["Stok"]}')
-#             developer_5()
-#             return
-#     print('Maaf ID barang yang anda masukan tidak valid')
-#     developer_4(st)
-            
-        
-# Memanggil fungsi start untuk memulai
-
-# def developer(id):
-#     for nm in nama_pss:
-#         if  nm['Nama'] == id and nm['pss'] == pss:
-#         # Membuat dictionary untuk barang baru
-#             print('Isi hal yang dibutuhkan')
-#             barang_baru = {}
-#             barang_baru["ID"] = input("Masukkan ID barang: ")
-#             barang_baru["Nama"] = input("Masukkan Nama: ")
-#             barang_baru["Spesifikasi"] = input("Masukkan Spesifikasi barang: ")
-#             barang_baru["Stok"] = int(input("Masukkan Stok barang: "))
-#             barang_baru["Satuan"] = input("Masukkan Satuan barang: ")
-#             barang_baru["Harga"] = int(input("Masukkan Harga barang: "))
-        
-#         # Menambahkan barang baru ke data_barang
-#             data_barang.append(barang_baru)
-#             print('Produk baru sudah di tambahkan')
-#             developer_2()
-#         else:
-#             print('Maaf Nama atau Password salah')
-        
-# def developer_3():
-#     dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang)')
-#     if dv == "2":
-#         developer(id)
-#     elif dv == "1":
-#         global st
-#         st = input("Masukkan ID barang yang ingin di Re-stok:   ")
-#         developer_4(st)
-#         developer(id)
-
-# fungsi re stok
-# def developer_4(st):
-#     for barang in data_barang:
-#         if barang["ID"] == st:
-#             print(f'Masukkan jumlah stok yang ingin ditambah ke {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
-#             jls = int(input())
-#             barang["Stok"] += jls
-#             print(f'Stok {barang["Nama"]} telah ditambahkan sebesar', jls, f'jumlah total stok {barang["Nama"]} menjadi {barang["Stok"]}')
-#             return
-#     print('Maaf ID barang yang anda masukan tidak valid')
-
 
 # Program Utama
 kondisi = True
@@ -256,14 +228,6 @@ while kondisi != False:
     elif pilihan == '3':
         print(f'Total harga yang Anda beli saat ini adalah {total_pembelian}')
         
-        
-    # elif pilihan == '4':
-    #     print('Anda akan memasuki mode developer, pastikan username dan passwordnya benar!')
-    #     id = input('Masukkan Username  :')
-    #     pss = input('Masukkan Password  :')
-    #     developer_3()
-    
-    
     elif pilihan == '4':
         print("Terima Kasih Telah Menggunakan Program Kami!")
         kondisi = False
