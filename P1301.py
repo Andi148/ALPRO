@@ -104,23 +104,26 @@ def developer():
             developer()
 
 def developer_3():
-    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Edit Data) (4. Check Data) (5. Kembali ke menu utama)')
+    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Edit Data) (4. Hapus Data) (5. Check Data) (6. Kembali ke menu utama)')
     if dv == "2":
         developer_2()
     elif dv == "1":
         st = input("Masukkan ID barang yang ingin di Re-stok:   ")
         developer_4(st)
-    elif dv == "4":
+    elif dv == "5":
         tampilkan_data()
         developer_3()
-    elif dv == "5":
+    elif dv == "6":
         start()
     elif dv == "3":
         developer_7()
+    elif dv == "4":
+        developer_8()
     else:
         print('Pilihan tidak valid')
         developer_3()
-
+        
+    # Fungsi Tambah Data
 def developer_2():
     print('Isi hal yang dibutuhkan')
     barang_baru = {}
@@ -136,7 +139,7 @@ def developer_2():
     print('Produk baru sudah di tambahkan')
     developer_6()
     
-# fungsi re stok
+    # Fungsi Re-stok
 def developer_4(st):
     for barang in data_barang:
         if barang["ID"] == st:
@@ -153,6 +156,7 @@ def developer_4(st):
     else:
         developer_4(st)
 
+    # Fungsi Popup Alert 
 def developer_5():
     dv = input('Apakah ingin melihat stok yang sudah ditambahkan?  (1. YA)  (2. Tidak)')
     if dv == "1":
@@ -164,6 +168,7 @@ def developer_5():
         print('Pilihan tidak valid')
         developer_5()
 
+    #  Fungsi Popup Alert
 def developer_6():
     dv = input('Apakah ingin melihat barang baru yang sudah ditambahkan/diedit?  (1. YA)  (2. Tidak)')
     if dv == "1":
@@ -173,8 +178,9 @@ def developer_6():
         developer_3()
     else:
         print('Pilihan tidak valid')
-        developer_5()    
+        developer_6()
 
+    # Fungsi Edit Data
 def developer_7():
     st = input("Masukkan ID barang yang ingin diedit atau 'exit' untuk keluar: ")
     for barang in data_barang:
@@ -202,12 +208,29 @@ def developer_7():
     else:
         developer_6()
 
+    # Fungsi Hapus Data
+def developer_8():
+    st = input("Masukkan ID barang yang ingin dihapus atau 'exit' untuk keluar: ")
+    for barang in data_barang:
+        if barang["ID"] == st:
+            print(f'Anda akan menghapus data untuk {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
+            data_barang.remove(barang)
+            print(f'Data untuk {barang["Nama"]} telah dihapus.')
+            developer_5()
+            return
+    print('Maaf ID barang yang anda masukan tidak valid')
+    if st.lower() == 'exit':
+        developer_3()
+    else:
+        developer_8()
 
 
-#start program
+
+
+    #start program
 start()
 
-# Program Utama
+    # Program Utama
 kondisi = True
 while kondisi != False:
     print('1. Tampilkan Data')
@@ -236,4 +259,4 @@ while kondisi != False:
     else:
         print("Pilihan tidak valid")
         
-#Kode di atas sekarang mencakup total pembelian yang akan diperbarui setiap kali membeli barang. 
+    #Kode di atas sekarang mencakup total pembelian yang akan diperbarui setiap kali membeli barang. 
