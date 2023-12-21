@@ -34,9 +34,14 @@ jlbarang = 0
     # Menampilakan Tabel barang
 
 def tampilkan_data():
-    print("{:<8} {:<15} {:<37} {:<13} {:<13} {:<8}".format("ID","Merek", "Tipe", "Stok", "Satuan", "Harga"))
+    print("-"*113)
+    print("| {:<8} | {:<15} | {:<37} | {:<13} | {:<13} | {:<8} |".format("ID","Merek", "Tipe", "Stok", "Satuan", "Harga"))
+    print("-"*113)  # Sesuaikan dengan lebar tabel Anda
+    print("-"*113)
     for barang in data_barang:
-        print("{:<8} {:<15} {:<37} {:<13} {:<13} {:<8}".format(barang["ID"], barang["Nama"], barang["Spesifikasi"], barang["Stok"], barang["Satuan"], barang["Harga"]))
+        print("| {:<8} | {:<15} | {:<37} | {:<13} | {:<13} | {:<8} |".format(barang["ID"], barang["Nama"], barang["Spesifikasi"], barang["Stok"], barang["Satuan"], barang["Harga"]))
+    print("-"*113)   # Sesuaikan dengan lebar tabel Anda
+
         
     # Fungsi untuk membeli barang dan mencetak total pembelian
 def beli_barang(id):
@@ -46,6 +51,7 @@ def beli_barang(id):
             beli_barang2(id)
             id_valid = True
     if not id_valid:
+        print("-"*113)
         print('ID barang salah, silahkan masukkan ID barang yang sesuai dengan Tabel barang dibawah')
         tampilkan_data()
     
@@ -66,7 +72,10 @@ def beli_barang2(id):
         
     # fungsi start bertugas untuk meminta input dari pengguna apakah mereka adalah developer atau pembeli.
 def start():
-    print('Selamat Datang di Toko Elektronik Teyvat')
+    print("-"*44)
+    print("| {:<10} |".format("Selamat Datang di Toko Elektronik Teyvat"))
+    print("-"*44)
+    # Input Data
     user_type = input("Masukkan pilihan Anda (1. Developer) (2. Pembeli):  ")
     if user_type == "1":
         developer()
@@ -75,7 +84,7 @@ def start():
     else:
         print("Maaf, pilihan tidak valid. Silakan masukkan 1 untuk Developer atau 2 untuk Pembeli.")
         start()
-
+    
 def pembeli():
     # Tambahkan fungsi untuk pembeli di sini
     pass
@@ -85,7 +94,7 @@ def developer():
     nama_pss = [
         {"Nama": "zidan", "pss": "123"},
         {"Nama": "andi", "pss": "123"},
-        {"Nama": "van", "pss": "asd"}
+        {"Nama": "van", "pss": "123"}
     # Tambahkan data pengguna lainnya sesuai kebutuhan
 ]
     id = input("Masukkan Nama: ")
