@@ -219,7 +219,7 @@ def developer_8():
     st = input("Masukkan ID barang yang ingin dihapus atau 'exit' untuk keluar: ")
     for barang in data_barang:
         if barang["ID"] == st:
-            print(f'Anda akan menghapus data untuk {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
+            print(f'Anda sudah menghapus data untuk {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
             data_barang.remove(barang)
             print(f'Data untuk {barang["Nama"]} telah dihapus.')
             developer_5()
