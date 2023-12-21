@@ -26,9 +26,6 @@ data_barang = [
 ]
 
 
-
-
-
 total_pembelian = 0
 jlbarang = 0
     # Menampilakan Tabel barang
@@ -36,11 +33,11 @@ jlbarang = 0
 def tampilkan_data():
     print("-"*113)
     print("| {:<8} | {:<15} | {:<37} | {:<13} | {:<13} | {:<8} |".format("ID","Merek", "Tipe", "Stok", "Satuan", "Harga"))
-    print("-"*113)  # Sesuaikan dengan lebar tabel Anda
+    print("-"*113) 
     print("-"*113)
     for barang in data_barang:
         print("| {:<8} | {:<15} | {:<37} | {:<13} | {:<13} | {:<8} |".format(barang["ID"], barang["Nama"], barang["Spesifikasi"], barang["Stok"], barang["Satuan"], barang["Harga"]))
-    print("-"*113)   # Sesuaikan dengan lebar tabel Anda
+    print("-"*113)
 
         
     # Fungsi untuk membeli barang dan mencetak total pembelian
