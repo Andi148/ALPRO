@@ -73,7 +73,7 @@ def start():
     print("| {:<10} |".format("Selamat Datang di Toko Elektronik Teyvat"))
     print("-"*44)
     # Input Data
-    user_type = input("Masukkan pilihan Anda (1. Developer) (2. Pembeli):  ")
+    user_type = input("Masukkan pilihan Anda (1. Developer) (2. Pembeli) : ")
     if user_type == "1":
         developer()
     elif user_type == "2":
@@ -94,8 +94,8 @@ def developer():
         {"Nama": "van", "pss": "123"}
     # Tambahkan data pengguna lainnya sesuai kebutuhan
 ]
-    id = input("Masukkan Nama: ")
-    pss = input("Masukkan Password: ")
+    id = input("Masukkan Nama : ")
+    pss = input("Masukkan Password : ")
     for nm in nama_pss:
         if nm['Nama'] == id and nm['pss'] == pss:
             print('Login berhasil')
@@ -110,7 +110,22 @@ def developer():
             developer()
 
 def developer_3():
-    dv = input('Anda mau re-stok atau menambahkan barang? (1. Re-stok) (2. Tambah barang) (3. Edit Data) (4. Hapus Data) (5. Check Data) (6. Kembali ke menu utama): ')
+    print("-"*35)
+    print('| 1. Re-stok                      |')
+    print("-"*35)
+    print('| 2. Tambah barang                |')
+    print("-"*35)
+    print('| 3. Edit Data                    |')
+    print("-"*35)
+    print('| 4. Hapus Data                   |')
+    print("-"*35)
+    print('| 5. Check Data                   |')
+    print("-"*35)
+    print('| 6. Kembali ke menu utama        |')
+    print("-"*35)
+    
+    # Input Data
+    dv = input("Masukkan Pilihan Nomer Perintah (1-6) : ")
     if dv == "2":
         developer_2()
     elif dv == "1":
@@ -164,7 +179,7 @@ def developer_4(st):
 
     # Fungsi Popup Alert 
 def developer_5():
-    dv = input('Apakah ingin melihat data yang sudah diubah  (1. YA)  (2. Tidak) ')
+    dv = input('Apakah ingin melihat data yang sudah diubah  (1. YA)  (2. Tidak) : ')
     if dv == "1":
         tampilkan_data()
         developer_3()
@@ -176,7 +191,7 @@ def developer_5():
 
     #  Fungsi Popup Alert
 def developer_6():
-    dv = input('Apakah ingin melihat barang baru yang sudah ditambahkan?  (1. YA)  (2. Tidak) ')
+    dv = input('Apakah ingin melihat barang baru yang sudah ditambahkan?  (1. YA)  (2. Tidak) : ')
     if dv == "1":
         tampilkan_data()
         developer_3()
@@ -188,16 +203,16 @@ def developer_6():
 
     # Fungsi Edit Data
 def developer_7():
-    st = input("Masukkan ID barang yang ingin diedit atau 'exit' untuk keluar: ")
+    st = input("Masukkan ID barang yang ingin diedit atau 'exit' untuk keluar : ")
     for barang in data_barang:
         if barang["ID"] == st:
             print(f'Anda akan mengedit data untuk {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
             
-            Nama = input('Masukkan merek baru: ')
-            Spesifikasi = input('Masukkan tipe baru: ')
-            Stok = int(input('Masukkan stok baru: '))
-            Satuan = input('Masukkan satuan baru: ')
-            Harga = int(input('Masukkan harga baru: '))
+            Nama = input('Masukkan merek baru       : ')
+            Spesifikasi = input('Masukkan tipe baru : ')
+            Stok = int(input('Masukkan stok baru    : '))
+            Satuan = input('Masukkan satuan baru    : ')
+            Harga = int(input('Masukkan harga baru  : '))
             
             barang["Nama"] = Nama
             barang["Spesifikasi"] = Spesifikasi
@@ -239,19 +254,21 @@ start()
     # Program Utama
 kondisi = True
 while kondisi != False:
-    print('1. Tampilkan Data')
-    print('2. Beli Barang')
-    print('3. Lihat Total Pembelian')
-    print('4. Kembali ke menu Utama')
-    print('5. Keluar Program')
-    print("Masukkan nomor perintah! (1 - 5)")
+    print("-"*36)
+    print('| 1. Tampilkan Data                |')
+    print('| 2. Beli Barang                   |')
+    print('| 3. Lihat Total Pembelian         |')
+    print('| 4. Kembali ke menu Utama         |')
+    print('| 5. Keluar Program                |')
+    print("| Masukkan nomor perintah! (1 - 5) |")
+    print("-"*36)
     pilihan = input()
     
     if pilihan == '1':
         tampilkan_data()
         
     elif pilihan == '2':
-        id = input("Masukkan ID Barang yang ingin dibeli: ")
+        id = input("Masukkan ID Barang yang ingin dibeli : ")
         beli_barang(id)
         
     elif pilihan == '3':
