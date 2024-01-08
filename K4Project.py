@@ -52,7 +52,7 @@ def beli_barang(id):
         print('ID barang salah, silahkan masukkan ID barang yang sesuai dengan Tabel barang dibawah')
         tampilkan_data()
     
-
+    #fungsi beli barang dan total pembelian
 def beli_barang2(id):
     global total_pembelian
     for barang in data_barang:
@@ -106,9 +106,13 @@ def developer():
         id_pss = input('ingin kembali ke menu utama atau coba kembali? (1. Menu utama) (2. Coba lagi):  ')
         if id_pss == "1":
             start()
-        elif id_pss == "2":
+        if id_pss == "2":
+            developer()
+        else:
+            print('Pilihan tidak valid')
             developer()
 
+    #menu developer
 def developer_3():
     print("-"*35)
     print('| 1. Re-stok                      |')
@@ -144,7 +148,7 @@ def developer_3():
         print('Pilihan tidak valid')
         developer_3()
         
-    # Fungsi Tambah Data
+    # Fungsi Tambah Data Barang
 def developer_2():
     print('Isi hal yang dibutuhkan')
     barang_baru = {}
