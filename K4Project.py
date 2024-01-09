@@ -212,14 +212,14 @@ def developer_7():
         if barang["ID"] == st:
             print(f'Anda akan mengedit data untuk {barang["Nama"]} dengan Spesifikasi {barang["Spesifikasi"]}')
             
-            Nama = input('Masukkan merek baru       : ')
-            Spesifikasi = input('Masukkan tipe baru : ')
+            # Nama = input('Masukkan merek baru       : ')
+            # Spesifikasi = input('Masukkan tipe baru : ')
             Stok = int(input('Masukkan stok baru    : '))
             Satuan = input('Masukkan satuan baru    : ')
             Harga = int(input('Masukkan harga baru  : '))
             
-            barang["Nama"] = Nama
-            barang["Spesifikasi"] = Spesifikasi
+            # barang["Nama"] = Nama
+            # barang["Spesifikasi"] = Spesifikasi
             barang["Stok"] = Stok
             barang["Satuan"] = Satuan
             barang["Harga"] = Harga
@@ -227,7 +227,6 @@ def developer_7():
             print(f'Data untuk {barang["Nama"]} telah diubah.')
             developer_5()
             return
-    print('Maaf ID barang yang anda masukan tidak valid')
     if st.lower() == 'exit':
         developer_3()
     else:
